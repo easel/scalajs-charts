@@ -10,5 +10,5 @@ lazy val root = project.in(file("."))
     //version := "0.1-SNAPSHOT",
     //isSnapshot := true,
     publishMavenStyle := true,
-    licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
+    licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 )
