@@ -4,8 +4,8 @@ import sbt._
 object Dependencies {
   object Versions {
     val MorrisJs = "0.5.1"
-    val ScalaJsDom = "0.8.2"
-    val ScalaJsReact = "0.10.5-SNAPSHOT"
+    val ScalaJsDom = "0.9.0"
+    val ScalaJsReact = "0.11.1"
   }
 
   val MorrisJs = Def.setting(Seq(
