@@ -1,43 +1,42 @@
 package com.github.easel.sjscharts.morrisjs
 
-import japgolly.scalajs.react.vdom.prefix_<^._
-import japgolly.scalajs.react.{Callback, ReactComponentB, ReactDOM}
+import japgolly.scalajs.react.vdom.html_<^._
+import japgolly.scalajs.react._
 import org.scalajs.dom
 
 /**
   * Created by erik on 6/1/16.
   */
 object ReactMorris {
-  val Spinner = ReactComponentB[Unit]("ReactMorris.Spinner")
+  val Spinner = ScalaComponent.builder[Unit]("ReactMorris.Spinner")
     .render { $ ⇒
       <.div(
         ^.cls := "chart-loading-container text-center",
         <.i(^.cls := "fa fa-5x fa-spinner faa-spin animated")
       )
     }
-    .buildU
+    .build
 
-  val Empty = ReactComponentB[Unit]("ReactMorris.Empty")
+  val Empty = ScalaComponent.builder[Unit]("ReactMorris.Empty")
     .render { $ ⇒
       <.div("No Data")
     }
-    .buildU
+    .build
 
   case class State(
     element:  Option[dom.Element]   = None,
     instance: Option[ChartInstance] = None
   )
 
-  val Component = ReactComponentB[Morris.ChartDefinition[_]]("ReactMorris")
+  val Component = ScalaComponent.builder[Morris.ChartDefinition[_]]("ReactMorris")
     .initialState(State())
     .render { $ ⇒
       <.div()
     }
-    .componentDidMount($ ⇒ {
-      val element = ReactDOM.findDOMNode($)
-      $.modState(_.copy(
-        element  = Some(element),
-        instance = Some($.props.withElement(element = element).render())
+    .componentDidMount(ctx ⇒ {
+      ctx.modState(_.copy(
+        element  = Some(ctx.getDOMNode),
+        instance = Some(ctx.props.withElement(element = ctx.getDOMNode).render())
       ))
     })
     .componentDidUpdate($ ⇒ (for {

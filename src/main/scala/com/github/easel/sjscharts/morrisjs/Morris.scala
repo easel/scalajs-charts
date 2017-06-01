@@ -4,7 +4,7 @@ import org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSGlobal, JSName}
 import scala.scalajs.js.{JSON, UndefOr, |}
 
 /**
@@ -12,7 +12,7 @@ import scala.scalajs.js.{JSON, UndefOr, |}
   */
 //scalastyle:off
 @js.native
-@JSName("Morris")
+@JSGlobal("Morris")
 object MorrisStatic extends js.Object {
   def Donut(params: DonutParams): ChartInstance = js.native
 

@@ -5,7 +5,7 @@ object Dependencies {
   object Versions {
     val MorrisJs = "0.5.1"
     val ScalaJsDom = "0.9.0"
-    val ScalaJsReact = "0.11.1"
+    val ScalaJsReact = "1.0.0"
   }
 
   val MorrisJs = Def.setting(Seq(
