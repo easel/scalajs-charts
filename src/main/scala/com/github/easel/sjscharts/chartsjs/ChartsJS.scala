@@ -78,7 +78,7 @@ object Chart {
       <.canvas(^.width := ctx.props.width.toString + "px", ^.height := ctx.props.height.toString + "px"))
     .componentDidMount(scope ⇒ Callback {
       // access context of the canvas
-      val ctx = scope.getDOMNode //.getContext("2d")
+      val ctx = scope.getDOMNode.asElement //.getContext("2d")
       // create the actual chart using the 3rd party component
       scope.props.style match {
         case LineChart ⇒ new JSChart(ctx).Line(scope.props.data)

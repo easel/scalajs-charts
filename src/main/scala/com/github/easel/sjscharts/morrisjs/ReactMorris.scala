@@ -35,8 +35,8 @@ object ReactMorris {
     }
     .componentDidMount(ctx ⇒ {
       ctx.modState(_.copy(
-        element  = Some(ctx.getDOMNode),
-        instance = Some(ctx.props.withElement(element = ctx.getDOMNode).render())
+        element  = Some(ctx.getDOMNode.asElement),
+        instance = Some(ctx.props.withElement(element = ctx.getDOMNode.asElement).render())
       ))
     })
     .componentDidUpdate($ ⇒ (for {

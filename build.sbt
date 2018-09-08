@@ -3,8 +3,8 @@ lazy val root = project.in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
 	  libraryDependencies ++= Dependencies.ScalaJsDom.value ++ Dependencies.ScalaJsReact.value,
-    scalaVersion := "2.11.11",
-    crossScalaVersions := Seq("2.11.11", "2.12.3"),
+    scalaVersion := "2.11.12",
+    crossScalaVersions := Seq("2.11.12", "2.12.6"),
     organization := "com.github.easel",
     name := "scalajs-charts",
     version := "0.5-SNAPSHOT",

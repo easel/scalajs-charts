@@ -1,11 +1,12 @@
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import sbt._
 
 object Dependencies {
   object Versions {
     val MorrisJs = "0.5.1"
     val ScalaJsDom = "0.9.3"
-    val ScalaJsReact = "1.1.0"
+    val ScalaJsReact = "1.2.3"
   }
 
   val MorrisJs = Def.setting(Seq(
